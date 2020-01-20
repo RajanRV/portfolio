@@ -6,7 +6,9 @@ class About extends React.Component {
         this.ref = firebase.firestore().collection('Descriptions').doc('1');
         this.unsubscribe = null;
         this.state = {
-            description: "Loading...."
+            description: <div>
+                    <i className="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style={{color: "#3F51B5"}}></i>
+                </div>
         }
     }
 
@@ -19,6 +21,13 @@ class About extends React.Component {
       }
       
     componentDidMount() {
+        var obj = this;
+        firebase.firestore().collection('Links').doc('cv').get().then(doc => {
+            console.log(doc.data());
+            if(doc.exists){
+                obj.setState({link: doc.data().link})
+            }
+        });
         this.unsubscribe = this.ref.onSnapshot(this.onCollectionUpdate);
     }
 
@@ -36,7 +45,7 @@ class About extends React.Component {
 
                         <div id="about-btn" className="card-action">
                             <div className="about-btn">
-                                <a href="/" className="btn waves-effect">Download CV <i className="fa fa-bath"></i> </a>
+                                <a href={this.state.link} download={true} rel="noopener noreferrer" target="_blank" className="btn waves-effect">Download CV </a>
                                 <a href="#contact" className="btn waves-effect">Contact Me</a>
                             </div>
                         </div>
