@@ -1,0 +1,30 @@
+[debug] [2020-01-16T13:06:00.909Z] ----------------------------------------------------------------------
+[debug] [2020-01-16T13:06:00.912Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy --only hosting:rajanvasani
+[debug] [2020-01-16T13:06:00.912Z] CLI Version:   7.11.0
+[debug] [2020-01-16T13:06:00.912Z] Platform:      linux
+[debug] [2020-01-16T13:06:00.912Z] Node Version:  v13.0.1
+[debug] [2020-01-16T13:06:00.913Z] Time:          Thu Jan 16 2020 18:36:00 GMT+0530 (India Standard Time)
+[debug] [2020-01-16T13:06:00.913Z] ----------------------------------------------------------------------
+[debug] [2020-01-16T13:06:00.913Z] 
+[debug] [2020-01-16T13:06:00.952Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-01-16T13:06:00.952Z] > authorizing via signed-in user
+[debug] [2020-01-16T13:06:00.952Z] [iam] checking project portfolio-8ad30 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-01-16T13:06:00.954Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-8ad30:testIamPermissions  
+
+[debug] [2020-01-16T13:06:02.797Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-16T13:06:02.801Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/portfolio-8ad30  
+ 
+[debug] [2020-01-16T13:06:03.230Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'portfolio-8ad30'...
+[info] 
+[info] i  deploying hosting
+[info] 
+[info] ✔  Deploy complete!
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/portfolio-8ad30/overview
+[debug] [2020-01-16T13:06:03.869Z] TypeError: Cannot read property 'deploys' of undefined
+    at /usr/local/lib/node_modules/firebase-tools/lib/deploy/index.js:84:36
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+[error] 
+[error] Error: An unexpected error has occurred.
